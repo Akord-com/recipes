@@ -1,18 +1,22 @@
 import { Akord } from '@akord/akord-js'
-import { Field, Form, Formik } from 'formik'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import { useState } from 'react'
 
-interface Values {
-  email: string;
-  password: string;
-}
 
 const Home: NextPage = () => {
   const [akord, setAkord] = useState<Akord | null>()
+  const [email, setEmail] = useState<string>('')
+  const [pass, setPass] = useState<string>('')
 
-  const login = async (email: string, pass: string) => {
+  const handleLogin = async (event: any) => {
+    event.preventDefault();
+    if (!email) {
+      throw new Error('Missing email')
+    }
+    if (!pass) {
+      throw new Error('Missing pass')
+    }
     const { jwtToken, wallet } = await Akord.auth.signIn(
       email,
       pass
@@ -22,34 +26,30 @@ const Home: NextPage = () => {
   }
 
   const loginForm = () => {
-    return <div className={'p-3'} style={{ width: '340px', backgroundColor: '#fff'}}>
-        <h1 className="display-6 mb-3">Login</h1>
-        <Formik
-          initialValues={{
-            email: '',
-            password: '',
-          }}
+    return <div className={'p-3'} style={{ width: '340px', backgroundColor: '#fff' }}>
+      <h1 className="display-6 mb-3">Login</h1>
+      <form onSubmit={handleLogin}>
+        <div className="mb-3">
+          <input
+            type="text"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
 
-          onSubmit={(
-            values: Values
-          ) => login(values.email, values.password)}
-        >
-          <Form>
-            <div className="mb-3">
-              <Field className="form-control" id="email" name="email" placeholder="Email" aria-describedby="emialHelp" />
-            </div>
-
-            <div className="mb-3">
-              <Field className="form-control" id="password" name="password" placeholder="Password" type="password" />
-            </div>
-
-            <button type="submit" className="btn btn-primary">Login</button>
-          </Form>
-        </Formik>
-      </div>
+        <div className="mb-3">
+          <input
+            type="password"
+            value={pass}
+            onChange={(e) => setPass(e.target.value)}
+          />
+        </div>
+        <button type="submit" className="btn btn-primary">Login</button>
+      </form>
+    </div>
   }
 
-  const upload = async (files: FileList | null) => {
+  const handleUpload = async (files: FileList | null) => {
     if (!akord) {
       throw new Error('Akord-js not initialized')
     }
@@ -67,21 +67,19 @@ const Home: NextPage = () => {
     confirm("Created stack: " + stackId)
     setAkord(null)
   }
-  
+
   const uploadForm = () => {
-    return <div className={'p-3'} style={{ width: '340px', backgroundColor: '#fff'}}>
-        <h1 className="display-6 mb-3">Upload</h1>
-        <form>
+    return <div className={'p-3'} style={{ width: '340px', backgroundColor: '#fff' }}>
+      <h1 className="display-6 mb-3">Upload</h1>
+      <form>
         <input
           type="file"
-          onChange={(e) => upload(e.target.files)}
+          onChange={(e) => handleUpload(e.target.files)}
         />
       </form>
-      </div>
+    </div>
   }
-  
 
-  console.log(akord)
   return (
     <div>
       <Head>
@@ -90,7 +88,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="vh-100 d-flex justify-content-center align-items-center">
-        {akord ? uploadForm() : loginForm()} 
+        {akord ? uploadForm() : loginForm()}
       </main>
     </div>
   )
