@@ -1,0 +1,22 @@
+{
+  "name": "arweave-import",
+  "version": "1.0.0",
+  "description": "A script to import files published with an Arweave address into an Akord Vault",
+  "main": "lib/import.js",
+  "author": "Akord Team",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "clean": "rm -rf ./lib",
+    "arweave-import": "yarn clean && tsc -p . && node ./lib/import.js"
+  },
+  "dependencies": {
+    "@akord/akord-js": "3.10.0",
+    "dotenv": "^16.0.1",
+    "graphql": "15.7.0",
+    "graphql-request": "4.3.0"
+  },
+  "devDependencies": {
+    "typescript": "^3.8.3"
+  }
+}
