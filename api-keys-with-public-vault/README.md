@@ -1,8 +1,8 @@
 # API keys with public vaults
-On server side the simplest way of using Akord API is AKord-js with API Key authentication.
+On server side the simplest way of using Akord API is Akord-js + API Key.
 
 API key can be generated / rotated using Akord app:
-Settings -> Developers
+Settings -> Developers∂
 
 API key can be then used with Akord-Js:
 
