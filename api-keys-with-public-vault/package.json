@@ -1,0 +1,9 @@
+{
+  "name": "api-keys-with-public-vault",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@akord/akord-js": "^4.1.1"
+  }
+}
