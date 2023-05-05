@@ -3,8 +3,8 @@ import { AkordWallet } from "@akord/crypto";
 import { NodeJs } from "@akord/akord-js/lib/types/file.js";
 import { StorageType } from "@akord/akord-js/lib/types/node.js";
 
-const apiKey = "aLXipeKonh4FhPDpkn6hQabhouQbqI9c5qF59tLl"
-const backupPhrase = "buffalo manage dumb faint issue govern decline tent bread deputy swear two"
+const apiKey = "your_api_key"
+const backupPhrase = "your_backup_phrase"
 
 Auth.configure({ apiKey: apiKey });
 const wallet = await AkordWallet.importFromBackupPhrase(backupPhrase)
