@@ -1,4 +1,4 @@
-import { Akord } from '@akord/akord-js'
+import { Akord, Auth } from '@akord/akord-js'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import { useState } from 'react'
@@ -17,16 +17,13 @@ const Home: NextPage = () => {
     if (!pass) {
       throw new Error('Missing pass')
     }
-    const { jwtToken, wallet } = await Akord.auth.signIn(
-      email,
-      pass
-    );
-    const akord = await Akord.init(wallet, jwtToken)
+    const {  wallet } = await Auth.signIn(email, pass);
+    const akord = await Akord.init(wallet)
     setAkord(akord)
   }
 
   const loginForm = () => {
-    return <div className={'p-3'} style={{ width: '340px', backgroundColor: '#fff' }}>
+    return <div className={'p-3'} style={{ width: '340px', backgroundColor: '#fff', color: 'black' }}>
       <h1 className="display-6 mb-3">Login</h1>
       <form onSubmit={handleLogin}>
         <div className="mb-3">
@@ -34,6 +31,7 @@ const Home: NextPage = () => {
             type="text"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            style={{ color: 'black' }}
           />
         </div>
 
@@ -42,6 +40,7 @@ const Home: NextPage = () => {
             type="password"
             value={pass}
             onChange={(e) => setPass(e.target.value)}
+            style={{ color: 'black' }}
           />
         </div>
         <button type="submit" className="btn btn-primary">Login</button>
@@ -58,10 +57,10 @@ const Home: NextPage = () => {
     }
     const file = files[0]
     const vaults = await akord?.vault.list()
-    if (!vaults || !vaults.length) {
+    if (!vaults.items || !vaults.items.length) {
       throw new Error('User does not have any vaults')
     }
-    const vault = vaults[0]
+    const vault = vaults.items[0]
     confirm("Uploading file to vault: " + vault.name)
     const { stackId } = await akord.stack.create(vault.id, file, file.name)
     confirm("Created stack: " + stackId)
