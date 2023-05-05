@@ -1,0 +1,9 @@
+{
+  "name": "auth-token-in-file",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@akord/akord-js": "^4.1.1"
+  }
+}
