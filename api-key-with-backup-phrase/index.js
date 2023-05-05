@@ -13,7 +13,7 @@ const akord = await Akord.init(wallet);
 
 const my_vault = await akord.vault.create("some publc vault", { public: true })
 
-const file = await NodeJs.File.fromPath("./index.ts");
+const file = await NodeJs.File.fromPath("./api-key-with-backup-phrase/index.js");
 
 const { stackId } = await akord.stack.create(my_vault.vaultId, file, "some public stack");
 
@@ -21,4 +21,4 @@ const stack = await akord.stack.get(stackId);
 
 const binary = await akord.file.get(stack.getUri(StorageType.S3, 0), my_vault.vaultId);
 
-console.log(binary);
+console.log(binary.toString());
