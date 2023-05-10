@@ -1,6 +1,6 @@
 import { serve } from "https://deno.land/std@0.186.0/http/server.ts";
 import { Router } from "https://deno.land/x/nativerouter/mod.ts";
-import { Akord, Auth, FileFactory } from "npm:@akord/akord-js@4.1.3-beta.01";
+import { Akord, Auth, FileFactory } from "npm:@akord/akord-js@4.3.0-beta.01";
 
 const { wallet } = await Auth.signIn("your_akord_username", "your_akord_pass");
 const akord = await Akord.init(wallet);
