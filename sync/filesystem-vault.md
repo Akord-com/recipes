@@ -52,5 +52,8 @@ skip approval step (-a, --auto-approve):\
 non recursive (-r, --recursive):\
 `akord sync some/path/to/files akord://vault_id --recursive=false`
 
-exclude hidden files and folders (-e, --exclude-hidden):\
-`akord sync some/path/to/files akord://vault_id --exclude-hidden`
+include hidden files and folders (--h, --include-hidden):\
+`akord sync some/path/to/files akord://vault_id --include-hidden`
+
+delete files from target storage that do not exist in source storage (-d, --delete):\
+`akord sync some/path/to/files akord://vault_id --delete`
