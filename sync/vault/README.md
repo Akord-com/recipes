@@ -35,7 +35,7 @@ Copy the vault id from the output
 optionally:\
 `akord vault:list`
 
-## Sync vauls
+# Sync vaults
 
 dir with vault:\
 `akord sync akord://vault_id_1 akord://vault_id_2`

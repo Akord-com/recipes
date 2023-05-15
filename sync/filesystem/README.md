@@ -1,4 +1,4 @@
-## Sync file system with Akord Vault
+# Sync file system with Akord Vault
 
 Sync file system with Akord vault using Akord CLI
 
