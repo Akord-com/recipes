@@ -15,10 +15,7 @@ AKORD_USER=username AKORD_PASSWORD="password" AKORD_VAULT_NAME=your_vault_name_t
 Usefull option to run as a task on cloud e.g. AWS Fargate
 
 ```
-docker build --build-arg AKORD_USER=username --build-arg AKORD_PASSWORD="password" 
---build-arg AKORD_VAULT_NAME=your_vault_name_to_create
---build-arg AKORD_SYNC_S3_BUCKET_URI=some_s3_uri
-.
+docker build --build-arg AKORD_USER=username --build-arg AKORD_PASSWORD="password" --build-arg AKORD_VAULT_NAME=vault_name_to_create --build-arg AKORD_SYNC_S3_BUCKET_URI=some_s3_uri .
 ```
 ```
 docker run {docker build output - container id}
