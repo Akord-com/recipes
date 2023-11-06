@@ -20,10 +20,10 @@
     "@akord/crypto" "0.10.0"
     amazon-cognito-identity-js "6.1.2"
 
-"@akord/akord-js@^4.21.8":
-  version "4.21.8"
-  resolved "https://registry.yarnpkg.com/@akord/akord-js/-/akord-js-4.21.8.tgz#fd26961e2168b857a5a92939b7482026fcb03973"
-  integrity sha512-YW0D60rfeT/5BO8ixggw6yw58xbB436kEbkw/bWabwqrzxsfreEjVJga3/8yu4QFhADkqSriUP75qxcqMZKsbQ==
+"@akord/akord-js@latest":
+  version "4.21.9"
+  resolved "https://registry.yarnpkg.com/@akord/akord-js/-/akord-js-4.21.9.tgz#88af8fdfd92e1fa4787e1569a0223ec7907774e8"
+  integrity sha512-O3xmK14lsvBhECh1Fl9RbMKrzknJ5iSxbuldnEVOjr+nsxMnBNU8u9RZ3ZYQ741CCw4nDSRxCGmN1L6S7TRWpg==
   dependencies:
     "@akord/akord-auth" "0.29.1"
     "@akord/crypto" "0.11.0"
@@ -7247,6 +7247,11 @@ pascal-case@^3.1.2:
   dependencies:
     no-case "^3.0.4"
     tslib "^2.0.3"
+
+path-browserify@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/path-browserify/-/path-browserify-1.0.1.tgz#d98454a9c3753d5790860f16f68867b9e46be1fd"
+  integrity sha512-b7uo2UCUOYZcnF/3ID0lulOJi/bafxa1xPe7ZPsammBSpjSWQkjNxlt635YGS2MiR9GjvuXCtz2emr3jbsz98g==
 
 path-exists@^3.0.0:
   version "3.0.0"
