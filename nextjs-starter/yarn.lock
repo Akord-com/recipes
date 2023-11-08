@@ -2,27 +2,25 @@
 # yarn lockfile v1
 
 
-"@akord/akord-auth@0.25.1":
-  version "0.25.1"
-  resolved "https://registry.yarnpkg.com/@akord/akord-auth/-/akord-auth-0.25.1.tgz#a2b4bed43adc19cbae3f7205479502b2b6a0a59d"
-  integrity sha512-Er70zClP40MsXM8iq0w5uDhenW6HdAixckBPpRCPNln0xo0ptzg3E7/oLZ6iH861khF8e24wdgCsuGq+b/h6UA==
+"@akord/akord-auth@0.29.1":
+  version "0.29.1"
+  resolved "https://registry.yarnpkg.com/@akord/akord-auth/-/akord-auth-0.29.1.tgz#d611f0990305690d7650548879ba4ded9eb306c9"
+  integrity sha512-+t2yrTKtj8aJ34sw+QGQ390Irmf5ObfzDhIBDipbkJGKDQVskF2TSJSGik9GjCEEcQwS0thNipzTbaqdEiVkJQ==
   dependencies:
     "@akord/crypto" "0.10.0"
     amazon-cognito-identity-js "6.1.2"
 
-"@akord/akord-js@^4.1.1":
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/@akord/akord-js/-/akord-js-4.1.1.tgz#f8d63e42bba85a3b453d44cb2db3e661a4dab264"
-  integrity sha512-WxrsJGQcNM1GOJFMYrVAHVcN3HXQv3e8V/7ZnGBIxg/Y3NXAJNDcJ9El6jeOsuPZbfLMrGkuZQVYZEtnat2MYA==
+"@akord/akord-js@latest":
+  version "4.21.9"
+  resolved "https://registry.yarnpkg.com/@akord/akord-js/-/akord-js-4.21.9.tgz#88af8fdfd92e1fa4787e1569a0223ec7907774e8"
+  integrity sha512-O3xmK14lsvBhECh1Fl9RbMKrzknJ5iSxbuldnEVOjr+nsxMnBNU8u9RZ3ZYQ741CCw4nDSRxCGmN1L6S7TRWpg==
   dependencies:
-    "@akord/akord-auth" "0.25.1"
-    "@akord/crypto" "0.10.6"
-    "@akord/ts-cacheable" "1.0.11"
+    "@akord/akord-auth" "0.29.1"
+    "@akord/crypto" "0.11.0"
+    "@akord/ts-cacheable" "1.0.13"
     axios "^0.24.0"
-    blueimp-load-image "^5.16.0"
     lodash "^4.17.21"
     mime-types "^2.1.35"
-    pdfjs-dist "^2.16.105"
     rxjs "^7.5.6"
     streamsaver "^2.0.6"
     uuid "^8.3.2"
@@ -51,10 +49,10 @@
     reflect-metadata "^0.1.13"
     tweetnacl "^1.0.3"
 
-"@akord/crypto@0.10.6":
-  version "0.10.6"
-  resolved "https://registry.yarnpkg.com/@akord/crypto/-/crypto-0.10.6.tgz#a331cadec9bee6b5263c61f75e3c74a88a87ba85"
-  integrity sha512-gmySRiefue+jIyJOM/PRPUtXPkusBwvEJh+I3HTXZU6n1ulZQC7fyQeNHb4XltL+H3EanLCGrhMN9j4EatEeVQ==
+"@akord/crypto@0.11.0":
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/@akord/crypto/-/crypto-0.11.0.tgz#267064786e19ef79ac39803ff5debfdc3eb61de0"
+  integrity sha512-s1WoC8Ho/+LNQRA82dXeqf99VJZdmX5OYN6IGj0/NCoREMQsE4Pexrb8IijjxvoX0muPOuEShuae2dhkKnC+xg==
   dependencies:
     "@akord/browser-level" "^1.0.2"
     bip39 "^3.1.0"
@@ -64,10 +62,10 @@
     reflect-metadata "^0.1.13"
     tweetnacl "^1.0.3"
 
-"@akord/ts-cacheable@1.0.11":
-  version "1.0.11"
-  resolved "https://registry.yarnpkg.com/@akord/ts-cacheable/-/ts-cacheable-1.0.11.tgz#1593091ab30b783b96ef86eea7e67966595128ac"
-  integrity sha512-WKs3Peqh1kzRd4SNaCJcKPRaTv73D+uz3m9p/LPYiD2XqXIiiJG2aiZjTQV4Ik7OldlWYHdTTscNKDxhnXDZFg==
+"@akord/ts-cacheable@1.0.13":
+  version "1.0.13"
+  resolved "https://registry.yarnpkg.com/@akord/ts-cacheable/-/ts-cacheable-1.0.13.tgz#4bd76049eff2a4647dabf4947255721affbaf551"
+  integrity sha512-ox5LNXxP/1JXDI1CnyNKesWvBg7J2PCoByYwav/MGaAMoiS7Nj2iJ36gar3L4wpskvnXhYmcEi6lN0l2XHUeLw==
   dependencies:
     rxjs "^7.5.6"
 
@@ -544,11 +542,6 @@ bip39@^3.1.0:
   dependencies:
     "@noble/hashes" "^1.2.0"
 
-blueimp-load-image@^5.16.0:
-  version "5.16.0"
-  resolved "https://registry.yarnpkg.com/blueimp-load-image/-/blueimp-load-image-5.16.0.tgz#16b763f57e6725f8865517bca8eb7c3dc7d41e09"
-  integrity sha512-3DUSVdOtlfNRk7moRZuTwDmA3NnG8KIJuLcq3c0J7/BIr6X3Vb/EpX3kUH1joxUhmoVF4uCpDfz7wHkz8pQajA==
-
 bootstrap@^5.2.3:
   version "5.2.3"
   resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-5.2.3.tgz#54739f4414de121b9785c5da3c87b37ff008322b"
@@ -733,11 +726,6 @@ doctrine@^3.0.0:
   integrity sha512-yS+Q5i3hBf7GBkd4KG8a7eBNNWNGLTaEwwYWUijIYM7zrlYDM0BFXHjjPWlWZ1Rg7UaddZeIDmi9jF3HmqiQ2w==
   dependencies:
     esutils "^2.0.2"
-
-dommatrix@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/dommatrix/-/dommatrix-1.0.3.tgz#e7c18e8d6f3abdd1fef3dd4aa74c4d2e620a0525"
-  integrity sha512-l32Xp/TLgWb8ReqbVJAFIvXmY7go4nTxxlWiAFyhoQw9RKEOHBZNnyGvJWqDVSPmq3Y9HlM4npqF/T6VMOXhww==
 
 emoji-regex@^9.2.2:
   version "9.2.2"
@@ -1950,14 +1938,6 @@ path-type@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/path-type/-/path-type-4.0.0.tgz#84ed01c0a7ba380afe09d90a8c180dcd9d03043b"
   integrity sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==
-
-pdfjs-dist@^2.16.105:
-  version "2.16.105"
-  resolved "https://registry.yarnpkg.com/pdfjs-dist/-/pdfjs-dist-2.16.105.tgz#937b9c4a918f03f3979c88209d84c1ce90122c2a"
-  integrity sha512-J4dn41spsAwUxCpEoVf6GVoz908IAA3mYiLmNxg8J9kfRXc2jxpbUepcP0ocp0alVNLFthTAM8DZ1RaHh8sU0A==
-  dependencies:
-    dommatrix "^1.0.3"
-    web-streams-polyfill "^3.2.1"
 
 picocolors@^1.0.0:
   version "1.0.0"

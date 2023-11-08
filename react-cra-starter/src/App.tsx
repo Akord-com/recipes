@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Akord, Auth } from '@akord/akord-js'
-import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css'
 

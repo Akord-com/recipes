@@ -1,6 +1,6 @@
 import { serve } from "https://deno.land/std@0.186.0/http/server.ts";
 import { Router } from "https://deno.land/x/nativerouter/mod.ts";
-import { Akord, Auth, FileFactory } from "npm:@akord/akord-js@4.3.0-beta.01";
+import { Akord, Auth } from "npm:@akord/akord-js@latest";
 
 const { wallet } = await Auth.signIn("your_akord_username", "your_akord_pass");
 const akord = await Akord.init(wallet);
@@ -37,8 +37,7 @@ const createVault = async (req: Request, params: Record<string, string>): Promis
 }
 
 const postFile = async (req: Request, params: Record<string, string>): Promise<Response> => {
-    const name = "my brand new stack (versioned file)"
-    const file = await FileFactory.fromBlob(await req.blob(), name);
+    const file = await req.blob();
     const { object } = await akord.stack.create(params.vaultId, file, "my stack (versioned file)");
     return new Response(JSON.stringify({ stack: object }), {
         status: 201,

@@ -1,7 +1,5 @@
 import { Akord, Auth } from "@akord/akord-js";
 import { AkordWallet } from "@akord/crypto";
-import { NodeJs } from "@akord/akord-js/lib/types/file.js";
-import { StorageType } from "@akord/akord-js/lib/types/node.js";
 
 const apiKey = "your_api_key"
 const backupPhrase = "your_backup_phrase"
@@ -13,12 +11,10 @@ const akord = await Akord.init(wallet);
 
 const my_vault = await akord.vault.create("some publc vault", { public: true })
 
-const file = await NodeJs.File.fromPath("./api-key-with-backup-phrase/index.js");
+const filePath = "./api-key-with-backup-phrase/index.js";
 
-const { stackId } = await akord.stack.create(my_vault.vaultId, file, "some public stack");
+const { stackId } = await akord.stack.create(my_vault.vaultId, filePath, "some public stack");
 
 const stack = await akord.stack.get(stackId);
 
-const binary = await akord.file.get(stack.getUri(StorageType.S3, 0), my_vault.vaultId);
-
-console.log(binary.toString());
+await akord.stack.download(stack.id);
